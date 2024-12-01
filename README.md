@@ -8,7 +8,7 @@
 
 ---
 
-This project incorporates selected components of the **Soft UI Dashboard Flask** template from [AppSeed](https://appseed.us/product/soft-ui-dashboard/flask/) as part of its website framework.
+This project incorporates selected components of the **Soft UI Dashboard** template from [AppSeed](https://appseed.us/product/soft-ui-dashboard/flask/) as part of its website framework.
 
 
 ---
@@ -86,3 +86,17 @@ This project utilizes **SQLAlchemy**, a Python SQL toolkit that allows developer
 4. **Data Validation and Querying**:
    - SQLAlchemy's query interface supports dynamic data retrieval and filtering, critical for user authentication and API workflows.  
    - Form inputs for login and registration are validated to ensure clean and consistent database records.  
+
+---
+
+### Flask Integration
+
+This project utilizes **Flask**, to build the application's core functionality. Flask serves as the foundation for handling HTTP requests, routing, and rendering dynamic web pages.
+
+Key features include:
+
+- **Routing and Modularization**: The application uses Flask Blueprints to organize features like authentication and API endpoints, ensuring a clean and maintainable structure.
+- **Dynamic Templating**: Flask integrates seamlessly with HTML templates, enabling dynamic rendering of user interfaces.
+- **API Integration**: RESTful APIs are implemented using Flask-RESTx to support robust data exchange and user authentication workflows.
+- **OAuth Support**: GitHub OAuth login is integrated using Flask-Dance for secure third-party authentication.
+
