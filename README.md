@@ -8,7 +8,7 @@
 
 ---
 
-This project uses the **Soft UI Dashboard Flask** template from [AppSeed](https://appseed.us/product/soft-ui-dashboard/flask/) as its website framework.
+This project incorporates selected components of the **Soft UI Dashboard Flask** template from [AppSeed](https://appseed.us/product/soft-ui-dashboard/flask/) as part of its website framework.
 
 
 ---
