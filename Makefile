@@ -2,7 +2,7 @@
 SHELL := /bin/bash
 ENV_PREFIX := $(shell python3 -c "from pathlib import Path; print('venv/bin/' if Path('venv/bin/pip').exists() else '')")
 
-.PHONY: setup format lint test clean install all
+.PHONY: setup format lint test clean install all docker-build-front docker-run-front
 
 # Setup the virtual environment
 setup:
@@ -37,5 +37,13 @@ install: ## Install the project in dev mode.
 	@echo "Installing dependencies..."
 	$(ENV_PREFIX)pip install -r requirements.txt
 	@echo "Virtual environment created. Activate with: 'source env/bin/activate'"
+
+docker-build-front: ## Build the Docker image for the frontend
+	@echo "Building the Docker image for frontend..."
+	cd frontend && docker build -t frontend .
+
+docker-run-front: ## Run the Docker container for frontend
+	@echo "Running the Docker container for frontend..."
+	docker run -p 5085:5005 --name frontend_container --rm frontend
 
 all: setup install format lint test
