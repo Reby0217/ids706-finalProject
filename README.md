@@ -52,8 +52,9 @@ You can set up and run the application using one of the following methods:
    export FLASK_APP=run.py
    export FLASK_ENV=development
    ```
-6. Run the application:
+6. Navigate to the `frontend` directory and run the application:
    ```bash
+   cd frontend
    flask run
    ```
 7. Visit the application in your browser at: [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
