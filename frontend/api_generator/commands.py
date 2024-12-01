@@ -1,9 +1,9 @@
 import importlib
 
-import click
 import api_generator.manager as manager
-from flask.cli import with_appcontext
+import click
 from apps.config import API_GENERATOR
+from flask.cli import with_appcontext
 
 
 @click.command(name="gen_api")

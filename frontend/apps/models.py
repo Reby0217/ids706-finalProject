@@ -5,9 +5,10 @@ Copyright (c) 2019 - present AppSeed.us
 
 from apps import db
 
-'''
+"""
 Add your models below
-'''
+"""
+
 
 # Book Sample
 class Book(db.Model):
