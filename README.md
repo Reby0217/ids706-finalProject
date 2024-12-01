@@ -62,18 +62,27 @@ You can set up and run the application using one of the following methods:
 ---
 ### Data Engineering Compliance
 
-This project leverages **SQLAlchemy**, a specialized library for managing relational databases, to handle and process data efficiently. All project data is stored in a SQLite database located at `frontend/apps/db.sqlite3`.
+This project utilizes **SQLAlchemy**, a Python SQL toolkit that allows developers to access and manage SQL databases using Pythonic domain language. All data is stored in a lightweight SQLite database located at `frontend/apps/db.sqlite3`.
 
 1. **Database Management**:
-   - SQLAlchemy is used to define and manage database models, such as `Users` and `OAuth`, facilitating CRUD operations and relationships using `ForeignKey` and `relationship`.
+   - The project defines and manages database models like `Users` and `OAuth` using SQLAlchemy, enabling efficient CRUD operations and managing relationships with `ForeignKey` and `relationship`.
+
+   - **Users Table Overview**:
+      - **id**: Unique identifier for each user (primary key).  
+      - **username**: Unique username for the user.  
+      - **email**: Unique email address.  
+      - **password**: Securely hashed password.  
+      - **oauth_github**: Optional GitHub OAuth identifier.  
+      - **api_token**: Authentication token for API access.  
+      - **api_token_ts**: Timestamp of token creation.
 
 2. **Data Storage**:
-   - The SQLite database (`frontend/apps/db.sqlite3`) serves as the primary storage for user data, authentication tokens, and OAuth details, ensuring a lightweight and portable data solution.
+   - User data, authentication tokens, and OAuth details are stored in the SQLite database, providing a portable and reliable storage solution.
 
-3. **Authentication and Token Management**:
-   - Secure password storage is implemented using **hashlib** for hashing and salting passwords.
-   - Token-based authentication uses **PyJWT** to generate and validate JSON Web Tokens for secure API access.
+3. **Authentication and Security**:
+   - **hashlib** ensures secure password storage with hashing and salting techniques.  
+   - **PyJWT** enables token-based authentication, generating and validating secure JSON Web Tokens.
 
 4. **Data Validation and Querying**:
-   - SQLAlchemy's query interface supports dynamic data retrieval and filtering, such as user authentication and JWT generation.
-   - Form inputs for login and registration are validated to ensure consistent, clean data in the database.
+   - SQLAlchemy's query interface supports dynamic data retrieval and filtering, critical for user authentication and API workflows.  
+   - Form inputs for login and registration are validated to ensure clean and consistent database records.  
