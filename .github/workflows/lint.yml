@@ -27,10 +27,10 @@ jobs:
           python -m venv venv
           . venv/bin/activate
           pip install --upgrade pip
-          pip install ruff
+          pip install -r requirements.txt
 
-      # Lint code with Ruff
-      - name: Lint code with Ruff
+      # Lint code with Makefile
+      - name: Lint code with Makefile
         run: |
           . venv/bin/activate
           make lint
