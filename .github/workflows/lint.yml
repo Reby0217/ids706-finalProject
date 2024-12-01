@@ -1,4 +1,4 @@
-name: Format
+name: Lint
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  format:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,16 +20,17 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
-
-      # Install the dependencies and set up virtual environment
+      
+      # Set up virtual environment and install dependencies
       - name: Set up virtual environment
         run: |
-          make setup
+          python -m venv venv
           . venv/bin/activate
-          pip install black
+          pip install --upgrade pip
+          pip install -r requirements.txt
 
-      # Run the format command within the virtual environment
-      - name: Format code with Black
+      # Lint code with Makefile
+      - name: Lint code with Makefile
         run: |
           . venv/bin/activate
-          make format
+          make lint
