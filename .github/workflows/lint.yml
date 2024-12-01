@@ -1,15 +1,36 @@
 name: Lint
-on: [push]
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python 3.11.5
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.11.5
-    - name: Lint with Ruff
-      id: lint
-      run: |
-        make lint
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      
+      # Set up virtual environment and install dependencies
+      - name: Set up virtual environment
+        run: |
+          python -m venv venv
+          . venv/bin/activate
+          pip install --upgrade pip
+          pip install ruff
+
+      # Lint code with Ruff
+      - name: Lint code with Ruff
+        run: |
+          . venv/bin/activate
+          make lint

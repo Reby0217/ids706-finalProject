@@ -1,19 +1,35 @@
 name: Format
-on: [push]
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
-  build:
+  format:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python 3.11.5
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.11.5
-    - name: Install dependencies
-      id: install
-      run: |
-        make install
-    - name: Format code
-      id: format
-      run: |
-        make format
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      # Install the dependencies and set up virtual environment
+      - name: Set up virtual environment
+        run: |
+          make setup
+          . venv/bin/activate
+          pip install black
+
+      # Run the format command within the virtual environment
+      - name: Format code with Black
+        run: |
+          . venv/bin/activate
+          make format
