@@ -1,8 +1,15 @@
+# IDS706 Final Project
+
+## Continuous Integration with GitHub Actions
+[![Install](https://github.com/Reby0217/ids706-finalProject/actions/workflows/install.yml/badge.svg)](https://github.com/Reby0217/ids706-finalProject/actions/workflows/install.yml)
+[![Lint](https://github.com/Reby0217/ids706-finalProject/actions/workflows/lint.yml/badge.svg)](https://github.com/Reby0217/ids706-finalProject/actions/workflows/lint.yml)
+[![Format](https://github.com/Reby0217/ids706-finalProject/actions/workflows/format.yml/badge.svg)](https://github.com/Reby0217/ids706-finalProject/actions/workflows/format.yml)
+[![Tests](https://github.com/Reby0217/ids706-finalProject/actions/workflows/test.yml/badge.svg)](https://github.com/Reby0217/ids706-finalProject/actions/workflows/test.yml)
+
+---
 
 This project uses the **Soft UI Dashboard Flask** template from [AppSeed](https://appseed.us/product/soft-ui-dashboard/flask/) as its website framework.
 
-
-Here’s the updated `README.md` section with the Docker instructions listed first:
 
 ---
 
