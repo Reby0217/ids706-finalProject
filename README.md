@@ -20,11 +20,11 @@ You can set up and run the application using one of the following methods:
 #### Option 1: Using Docker (Recommended)
 1. Build the Docker image:
    ```bash
-   make build-frontend
+   make docker-build-front
    ```
 2. Run the Docker container:
    ```bash
-   make run-frontend
+   make docker-run-front
    ```
 3. Visit the application in your browser at: [http://localhost:5085/](http://localhost:5085/) 
 
