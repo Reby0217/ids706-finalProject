@@ -59,3 +59,21 @@ You can set up and run the application using one of the following methods:
    ```
 7. Visit the application in your browser at: [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
+---
+### Data Engineering Compliance
+
+This project leverages **SQLAlchemy**, a specialized library for managing relational databases, to handle and process data efficiently. All project data is stored in a SQLite database located at `frontend/apps/db.sqlite3`.
+
+1. **Database Management**:
+   - SQLAlchemy is used to define and manage database models, such as `Users` and `OAuth`, facilitating CRUD operations and relationships using `ForeignKey` and `relationship`.
+
+2. **Data Storage**:
+   - The SQLite database (`frontend/apps/db.sqlite3`) serves as the primary storage for user data, authentication tokens, and OAuth details, ensuring a lightweight and portable data solution.
+
+3. **Authentication and Token Management**:
+   - Secure password storage is implemented using **hashlib** for hashing and salting passwords.
+   - Token-based authentication uses **PyJWT** to generate and validate JSON Web Tokens for secure API access.
+
+4. **Data Validation and Querying**:
+   - SQLAlchemy's query interface supports dynamic data retrieval and filtering, such as user authentication and JWT generation.
+   - Form inputs for login and registration are validated to ensure consistent, clean data in the database.
