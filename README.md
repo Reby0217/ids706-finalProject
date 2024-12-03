@@ -8,7 +8,7 @@
 
 ---
 
-This project incorporates selected components of the **Soft UI Dashboard** template from [AppSeed](https://appseed.us/product/soft-ui-dashboard/flask/) as part of its website framework.
+This project is a microservice-based application that provides user authentication and profile management functionalities. It includes sign-up, login, and profile display features. Each time a user successfully signs up, their information is stored in the SQLite database.
 
 
 ---
@@ -100,3 +100,17 @@ Key features include:
 - **API Integration**: RESTful APIs are implemented using Flask-RESTx to support robust data exchange and user authentication workflows.
 - **OAuth Support**: GitHub OAuth login is integrated using Flask-Dance for secure third-party authentication.
 
+---
+
+### AI Pair Programming
+
+GitHub Copilot: Used for auto-generating boilerplate code, optimizing frontend HTML files.
+
+---
+
+
+### Dependencies
+
+- This project incorporates selected components of the **Soft UI Dashboard** template from [AppSeed](https://appseed.us/product/soft-ui-dashboard/flask/) as part of its website framework. 
+
+- The AWS CDK is referenced from the official example in [aws-cdk-samples](https://github.com/aws-samples/aws-cdk-examples).
