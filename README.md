@@ -102,10 +102,6 @@ Key features include:
 
 ---
 
-Here's a more concise version of the README section that still covers the key points about using AWS CDK for Infrastructure as Code (IaC):
-
----
-
 ### Infrastructure as Code (IaC) with AWS CDK
 
 Our project utilizes the AWS CDK to define and provision our cloud infrastructure, ensuring a consistent, reliable, and secure setup across development, testing, and production environments. AWS CDK allows for declarative infrastructure management using familiar programming languages, enabling version control and reducing deployment errors.
