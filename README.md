@@ -102,6 +102,32 @@ Key features include:
 
 ---
 
+### Infrastructure as Code (IaC) with AWS CDK
+
+Our project utilizes the AWS CDK to define and provision our cloud infrastructure, ensuring a consistent, reliable, and secure setup across development, testing, and production environments. AWS CDK allows for declarative infrastructure management using familiar programming languages, enabling version control and reducing deployment errors.
+
+#### Key Features:
+- **DynamoDB Tables**: Managed NoSQL databases with specified partition keys.
+- **Lambda Functions**: Serverless functions for backend operations such as data handling and user authentication.
+- **Security**: Explicit permission definitions enhance security and compliance.
+
+#### Code Snippet:
+```python
+demo_table = aws_dynamodb.Table(
+    self, "user_info",
+    partition_key=aws_dynamodb.Attribute(name="id", type=aws_dynamodb.AttributeType.STRING),
+)
+
+producer_lambda = aws_lambda.Function(
+    self, "write_to_dynamodb_lambda_function",
+    runtime=aws_lambda.Runtime.PYTHON_3_11,
+    code=aws_lambda.Code.from_asset("./lambda/producer"),
+)
+```
+
+
+---
+
 ### AI Pair Programming
 
 GitHub Copilot: Used for auto-generating boilerplate code, optimizing frontend HTML files.
