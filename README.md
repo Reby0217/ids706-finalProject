@@ -8,7 +8,7 @@
 
 ---
 
-This project is a microservice-based application that provides user authentication and profile management functionalities. It includes sign-up, login, and profile display features. Each time a user successfully signs up, their information is stored in the SQLite database.
+This project is a microservice-based application that provides user authentication and profile management functionalities. It includes sign-up, login, and profile display features. Each time a user successfully signs up, their information is stored in the database.
 
 Link to our app: https://bnnt5hhvdc.us-east-2.awsapprunner.com/
 
