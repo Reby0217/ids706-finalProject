@@ -62,6 +62,13 @@ You can set up and run the application using one of the following methods:
 7. Visit the application in your browser at: [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
 ---
+
+## Architectural Diagram
+
+![image](imgs/diagram.png)
+
+---
+
 ## Data Engineering Compliance
 
 This project utilizes **SQLAlchemy**, a Python SQL toolkit that allows developers to access and manage SQL databases using Pythonic domain language. All data is stored in a lightweight SQLite database located at `frontend/apps/db.sqlite3`.
