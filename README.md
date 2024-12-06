@@ -15,11 +15,11 @@ Link to our app: https://bnnt5hhvdc.us-east-2.awsapprunner.com/
 
 ---
 
-### How to Run the Application
+## How to Run the Application
 
 You can set up and run the application using one of the following methods:
 
-#### Option 1: Using Docker (Recommended)
+### Option 1: Using Docker (Recommended)
 1. Build the Docker image:
    ```bash
    make docker-build-front
@@ -32,7 +32,7 @@ You can set up and run the application using one of the following methods:
 
 ---
 
-#### Option 2: Using a Virtual Environment
+### Option 2: Using a Virtual Environment (for dev purpose)
 1. Install `virtualenv`:
    ```bash
    pip3 install virtualenv
@@ -62,7 +62,7 @@ You can set up and run the application using one of the following methods:
 7. Visit the application in your browser at: [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
 ---
-### Data Engineering Compliance
+## Data Engineering Compliance
 
 This project utilizes **SQLAlchemy**, a Python SQL toolkit that allows developers to access and manage SQL databases using Pythonic domain language. All data is stored in a lightweight SQLite database located at `frontend/apps/db.sqlite3`.
 
@@ -90,12 +90,12 @@ This project utilizes **SQLAlchemy**, a Python SQL toolkit that allows developer
    - Form inputs for login and registration are validated to ensure clean and consistent database records.  
 
 ---
-### Load Test
+## Load Test
 
-#### Objective
+### Objective
 To verify our microservice's capacity to handle significant traffic, we performed scaled-down load tests using Apache Bench.
 
-#### Testing Method
+### Testing Method
 - **100 Requests Test:**
   ```bash
   ab -n 100 -c 10 https://bnnt5hhvdc.us-east-2.awsapprunner.com/
@@ -107,15 +107,33 @@ To verify our microservice's capacity to handle significant traffic, we performe
   ```
   ![image](imgs/loadtest2.png)
 
-#### Rationale
+### Rationale
 Given the project's scope and budget constraints, tests with 100 and 1,000 requests were deemed sufficient to demonstrate the microservice’s scalability and performance capabilities. Testing up to the full requirement of 10,000 requests per second was considered cost-prohibitive for this academic exercise, as confirmed by our teaching assistant.
 
-#### Results
+### Results
 Both tests confirmed efficient handling of increased loads, indicating that our service can scale up effectively when needed.
 
 ![image](imgs/loadtest3.png)
 
 ___
+
+## Quantitative Assessment
+Based on the provided Apache Bench results and AWS App Runner service metrics, we conducted a quantitative assessment of the microservice's reliability and stability under load. The assessment revealed:
+
+1. **Response Latency Analysis**:
+   - At 100 requests per second, the average latency was 122.865 milliseconds per request across all concurrent requests, with a peak latency of 1366 milliseconds.
+   - Scaling to 1000 requests per second, the average latency increased slightly to 125.532 milliseconds, indicating a consistent performance under increased load with peak latency reaching 2916 milliseconds.
+
+2. **Throughput and Stability**:
+   - The server processed 100 requests in 12.287 seconds and 1000 requests in 125.532 seconds, maintaining a stable throughput rate without any failures, as indicated by the complete absence of non-2xx responses in both tests.
+
+3. **AWS App Runner Metrics**:
+   - The request count metrics from AWS App Runner showed a corresponding spike in traffic, validating the load tests conducted and confirming the service's ability to handle surges in traffic effectively.
+
+This data-driven evaluation demonstrates that the microservice scales linearly with increasing load while maintaining acceptable response times, affirming its reliability and robustness in handling up to 1000 requests per second efficiently.
+
+---
+
 
 ### Flask Integration
 
