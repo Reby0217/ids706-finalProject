@@ -184,6 +184,26 @@ producer_lambda = aws_lambda.Function(
 )
 ```
 
+#### Lambda Functions
+We defined 3 Lambda functions in our project:
+1. Check duplicate username (`./lambda_microservice/lambda/consumer`)
+2. Write item to DynamoDB (`./lambda_microservice/lambda/producer`)
+3. Login (`./lambda_microservice/login`)
+
+Here are the results of running tests on the respective Lambda functions.
+
+<img width="1293" alt="consumer_lambda_test_result" src="https://github.com/user-attachments/assets/de702261-1300-43a7-a2b3-27877d82aa0c">
+
+<img width="1106" alt="producer_lambda_test_result" src="https://github.com/user-attachments/assets/f9a265a6-44ec-4440-9246-fcc7e87d4905">
+
+<img width="1297" alt="login_lambda_test_result" src="https://github.com/user-attachments/assets/5a669b53-bf56-408b-b6b1-8d646c2dc30f">
+
+#### DynamoDB
+We used DynamoDB on AWS to store user information:
+
+<img width="1264" alt="dynamo_db" src="https://github.com/user-attachments/assets/19c6f0d0-55fa-449d-bf07-0fb8ecc7511a">
+
+Since we are interacting with dummy data to test our Lambda functions, the username-password combinations listed do not pose any real-world security issues.
 
 ---
 
