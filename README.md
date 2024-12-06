@@ -136,7 +136,7 @@ This data-driven evaluation demonstrates that the microservice scales linearly w
 
 ### Auto Scaling Setup in AWS App Runner
 
-![auto-scaling](imgs/auto.png)
+![auto-scaling](imgs/auto.jpg)
 
 ---
 
