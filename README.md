@@ -115,7 +115,7 @@ Both tests confirmed efficient handling of increased loads, indicating that our 
 
 ![image](imgs/loadtest3.png)
 
-___
+---
 
 ## Quantitative Assessment
 Based on the provided Apache Bench results and AWS App Runner service metrics, we conducted a quantitative assessment of the microservice's reliability and stability under load. The assessment revealed:
@@ -131,6 +131,12 @@ Based on the provided Apache Bench results and AWS App Runner service metrics, w
    - The request count metrics from AWS App Runner showed a corresponding spike in traffic, validating the load tests conducted and confirming the service's ability to handle surges in traffic effectively.
 
 This data-driven evaluation demonstrates that the microservice scales linearly with increasing load while maintaining acceptable response times, affirming its reliability and robustness in handling up to 1000 requests per second efficiently.
+
+---
+
+### Auto Scaling Setup in AWS App Runner
+
+![auto-scaling](imgs/auto.png)
 
 ---
 
