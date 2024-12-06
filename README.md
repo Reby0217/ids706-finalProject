@@ -90,6 +90,31 @@ This project utilizes **SQLAlchemy**, a Python SQL toolkit that allows developer
    - Form inputs for login and registration are validated to ensure clean and consistent database records.  
 
 ---
+### Load Test
+
+#### Objective
+To verify our microservice's capacity to handle significant traffic, we performed scaled-down load tests using Apache Bench.
+
+#### Testing Method
+- **100 Requests Test:**
+  ```bash
+  ab -n 100 -c 10 https://bnnt5hhvdc.us-east-2.awsapprunner.com/
+  ```
+   ![image](imgs/loadtest1.png)
+- **1,000 Requests Test:**
+  ```bash
+  ab -n 1000 -c 10 https://bnnt5hhvdc.us-east-2.awsapprunner.com/
+  ```
+  ![image](imgs/loadtest2.png)
+
+#### Rationale
+Given the project's scope and budget constraints, tests with 100 and 1,000 requests were deemed sufficient to demonstrate the microservice’s scalability and performance capabilities. Testing up to the full requirement of 10,000 requests per second was considered cost-prohibitive for this academic exercise, as confirmed by our teaching assistant.
+
+#### Results
+Both tests confirmed efficient handling of increased loads, indicating that our service can scale up effectively when needed.
+![image](imgs/loadtest3.png)
+
+___
 
 ### Flask Integration
 
