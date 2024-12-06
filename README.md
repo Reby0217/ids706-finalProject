@@ -112,6 +112,7 @@ Given the project's scope and budget constraints, tests with 100 and 1,000 reque
 
 #### Results
 Both tests confirmed efficient handling of increased loads, indicating that our service can scale up effectively when needed.
+
 ![image](imgs/loadtest3.png)
 
 ___
