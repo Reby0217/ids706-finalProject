@@ -161,14 +161,16 @@ Key features include:
 
 ---
 
+## Microservice
+
 ### Infrastructure as Code (IaC) with AWS CDK
 
-Our project utilizes the AWS CDK to define and provision our cloud infrastructure, ensuring a consistent, reliable, and secure setup across development, testing, and production environments. AWS CDK allows for declarative infrastructure management using familiar programming languages, enabling version control and reducing deployment errors.
+Our project leverages the AWS Cloud Development Kit (CDK) to define and provision our cloud infrastructure, ensuring a consistent, reliable, and secure setup across development, testing, and production environments. The AWS CDK allows for declarative infrastructure management using familiar programming languages like Python, enabling version control and significantly reducing the likelihood of deployment errors.
 
 #### Key Features:
-- **DynamoDB Tables**: Managed NoSQL databases with specified partition keys.
-- **Lambda Functions**: Serverless functions for backend operations such as data handling and user authentication.
-- **Security**: Explicit permission definitions enhance security and compliance.
+- **DynamoDB Tables**: We manage NoSQL databases with specified partition keys to efficiently handle large-scale data.
+- **Lambda Functions**: Our backend operations are powered by serverless functions that handle data processing and user authentication, seamlessly integrating with our data pipeline.
+- **Security**: We employ explicit permission definitions to enhance security and ensure compliance with best practices.
 
 #### Code Snippet:
 ```python
@@ -185,25 +187,33 @@ producer_lambda = aws_lambda.Function(
 ```
 
 #### Lambda Functions
-We defined 3 Lambda functions in our project:
-1. Check duplicate username (`./lambda_microservice/lambda/consumer`)
-2. Write item to DynamoDB (`./lambda_microservice/lambda/producer`)
-3. Login (`./lambda_microservice/login`)
+We have developed three Python-based Lambda functions to interface directly with our data pipeline:
+1. **Check Duplicate Username**: This function checks for duplicate usernames within our user database to prevent registration conflicts. (Path: `./lambda_microservice/lambda/consumer`)
+2. **Write Item to DynamoDB**: It handles the insertion of new user data into our DynamoDB table, ensuring data consistency and durability. (Path: `./lambda_microservice/lambda/producer`)
+3. **Login**: This function manages user authentication by verifying credentials stored in DynamoDB. (Path: `./lambda_microservice/login`)
 
-Here are the results of running tests on the respective Lambda functions.
+Here are the results of running tests on these Lambda functions:
 
-<img width="1293" alt="consumer_lambda_test_result" src="https://github.com/user-attachments/assets/de702261-1300-43a7-a2b3-27877d82aa0c">
+![Consumer Lambda Test Result](https://github.com/user-attachments/assets/de702261-1300-43a7-a2b3-27877d82aa0c)
+![Producer Lambda Test Result](https://github.com/user-attachments/assets/f9a265a6-44ec-4440-9246-fcc7e87d4905)
+![Login Lambda Test Result](https://github.com/user-attachments/assets/5a669b53-bf56-408b-b6b1-8d646c2dc30f)
 
-<img width="1106" alt="producer_lambda_test_result" src="https://github.com/user-attachments/assets/f9a265a6-44ec-4440-9246-fcc7e87d4905">
+#### CloudWatch metrics
 
-<img width="1297" alt="login_lambda_test_result" src="https://github.com/user-attachments/assets/5a669b53-bf56-408b-b6b1-8d646c2dc30f">
+![image](imgs/consumer-metrics.png)
+![image](imgs/login-metrics.png)
+![image](imgs/producer-metrics.png)
 
 #### DynamoDB
-We used DynamoDB on AWS to store user information:
+Our DynamoDB setup on AWS stores user information efficiently and securely:
 
-<img width="1264" alt="dynamo_db" src="https://github.com/user-attachments/assets/19c6f0d0-55fa-449d-bf07-0fb8ecc7511a">
+![DynamoDB Setup](https://github.com/user-attachments/assets/19c6f0d0-55fa-449d-bf07-0fb8ecc7511a)
 
-Since we are interacting with dummy data to test our Lambda functions, the username-password combinations listed do not pose any real-world security issues.
+Since we are interacting with dummy data to test our Lambda functions, the username-password combinations listed do not pose any real-world security risks.
+
+
+#### Logging
+![image](imgs/logging.png)
 
 ---
 
