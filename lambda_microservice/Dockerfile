@@ -15,6 +15,7 @@ RUN apk update && apk add --update --no-cache \
     npm
 RUN apk --no-cache add --virtual builds-deps build-base python3
 # Update NPM
+RUN apk add --no-cache nodejs-current npm
 RUN npm config set unsafe-perm true
 RUN npm update -g
 # Install AWSCLI
