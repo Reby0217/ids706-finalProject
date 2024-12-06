@@ -1,5 +1,5 @@
 FROM alpine:3.16.2
-LABEL authors="hugohu"
+LABEL authors="petermin"
 
 RUN apk update && apk add --update --no-cache \
     git \
