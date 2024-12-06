@@ -22,7 +22,10 @@ def lambda_handler(event, context):
             ExpressionAttributeValues={":val": username},
         )
 
-        if response.get("Items"):
+        if (
+            response.get("Items")
+            and response["Items"][0].get("username") == username
+        ):
             print("Username already exists!")
             return {
                 "statusCode": 200,
